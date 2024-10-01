@@ -28,3 +28,45 @@ chmod +x basicinstall.sh
 ```bash
 docker logs -f worker
 ```
+#---------------------------------------
+ git clone https://github.com/nhunamit/basic-coin-prediction-node.git
+mv basic-coin-prediction-node worker3-20m
+cd worker3-20m
+
+#Switch to branch
+
+ 
+git branch -a
+git checkout worker3-20m
+git branch -a
+
+#fix mnemonic
+
+ vi config.json
+
+ *click { i }  for edit , click  {esc}  type---   {:wq}  ---  {enter}
+
+#Execute the command
+ 
+ chmod +x init.config
+ ./init.config
+
+*if error "install jq"
+
+  sudo apt-get install jq -y
+
+#Run worker
+
+ 
+docker compose up -d
+
+#check logs
+
+ 
+docker compose logs -f
+
+*ctrl+c for close
+
+#cek wallet tx
+
+ht*tp://worker-tx.nodium.xyz/
